@@ -1,0 +1,428 @@
+/* Reset initial styles */
+:root {
+  --primary: #201510;
+  --secondary: #3d342e;
+  --terciary: #6b5551;
+  --primary-bg: #a79479;
+  --secondary-bg: #c2be9a;
+  --white: #fafafa;
+  --black: #0a0a0a;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.5;
+  font-family: 'Gaegu', cursive;
+}
+body {
+  background-color: var(--primary-bg);
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* Main container */
+.main-container {
+  width: 100%;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 1.6rem;
+  background-color: var(--primary-bg);
+  color: var(--black);
+}
+.main__title{
+  color: var(--primary);
+  font-size: 6rem;
+  text-align: center;
+}
+
+/* Section random michies */
+.rMichis__container, 
+.fMichis__container,
+.uMichis__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 20px;
+  border: 3px solid var(--secondary-);
+  border-radius: 30px;
+  background-color: var(--secondary-bg);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.rMichis__container--subcontainer {
+  min-width: 50%;
+  max-width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+/* Estilos del boton de random michis */
+.rMichis__container--subcontainer > button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 12px;
+  gap: 8px;
+  height: 50px;
+  width: 150px;
+  border: none;
+  background: var(--terciary);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+.rMichis__container--subcontainer > button > span {
+  line-height: 20px;
+  font-size: 1.5rem;
+  color: var(--secondary-bg);
+  font-family: sans-serif;
+  letter-spacing: 1px;
+}
+.rMichis__container--subcontainer > button:hover {
+  background: var(--secondary);
+}
+.rMichis__container--subcontainer > button:hover > svg {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+/* Estilos del titulo de cada sección */
+.rMichis__container legend,
+.fMichis__container legend,
+.uMichis__container legend {
+  color: var(--secondary-bg);
+  background-color: var(--primary);
+  padding: 5px 20px;
+  border-radius: 30px;
+  text-align: center;
+  font-size: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+/* Estilos del selector de gatos random */
+.selectdiv {
+  width: 100%;
+  max-width: 250px;
+  position: relative;
+}
+select::-ms-expand {
+  display: none;
+}
+.selectdiv:after {
+  content: '<>';
+  font: 17px "Consolas", monospace;
+  color: #333;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  right: 11px;
+  /*Adjust for position however you want*/
+  
+  top: 18px;
+  padding: 0 0 2px;
+  border-bottom: 1px solid #999;
+  /*left line */
+  
+  position: absolute;
+  pointer-events: none;
+}
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  float: right;
+  margin: 5px 0px;
+  padding: 0px 24px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--secondary-bg);
+  background-color: var(--terciary);
+  background-image: none;
+  border: 2px solid var(--secondary);
+  border-radius: 20px;
+  -ms-word-break: normal;
+  word-break: normal;
+}
+/* Estilos del contenedor de tarjetas */
+.sub-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  margin-top: 20px;
+}
+/* Estilos de las cards de los michis */
+.form__container .card__container,
+.sub-container .card__container {
+  height: 300px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+  border-radius: 10px;
+  background-color: white;
+  /* cursor: pointer; */
+  transition: 400ms;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.sub-container .card__container:hover {
+  transform: scale(1.1, 1.1);
+}
+.sub-container:hover > .card__container:not(:hover) {
+  filter: blur(10px);
+  transform: scale(0.9, 0.9);
+}
+.form__container .card__container figure,
+.sub-container .card__container figure {
+  width: 90%;
+  background-color: white;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uMichis__container .form__container .only-one-card {
+  width: 200px;
+}
+.form__container .card__container figure img,
+.sub-container .card__container figure img {
+  max-width: 100%;
+  max-height: 100%;
+}
+/* Estilos del botón de like */
+.rMichis__container .like-button {
+  padding: 0 20px 0 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 7px #e7413373;
+  background-color: #e74133;
+  color: white;
+  font-size: 17px;
+  border: none;
+  display: flex;
+  align-items: center;
+  transition: all .5s ease-in-out;
+  letter-spacing: 2px;
+}
+.rMichis__container .like-button:hover {
+  cursor: pointer;
+  background-color: #f54d3e;
+  transition: all .5s ease-in-out;
+  box-shadow: 0px 0px 5px 3px #e7413373;
+}
+.rMichis__container .like-button::before {
+  content: "";
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzc2LjMyIDU1Mi4zYy0wLjM4NjcyIDAtMC43ODEyNS0wLjAxNTYyNS0xLjE3MTktMC4wNTA3ODEtMS4wNzgxLTAuMDc0MjE5LTIuMTM2Ny0wLjI2NTYyLTMuMTU2Mi0wLjU0Njg4LTIuNzMwNS0wLjU5Mzc1LTUuMjkzLTEuODUxNi03LjM0MzgtMy43ODEybC0xMzcuNTQtMTI5LjY2Yy00NC40NTMtNDEuOTAyLTQ5LjQ4LTExNS40Ni0xMS4yMTUtMTYzLjk3IDE5LjA4Mi0yNC4xODQgNDUuNzctMzguNjk1IDc1LjE1Mi00MC44NTUgMjguOTMtMi4xMTcyIDU2Ljg2MyA4LjAzMTIgNzguNjggMjguNTk4bDYuMjY1NiA1LjkwMjMgNi4yNjU2LTUuOTAyM2MyMS44MzItMjAuNTcgNDkuODA1LTMwLjY5MSA3OC42OTEtMjguNTk4IDI5LjM4MyAyLjE2NDEgNTYuMDY2IDE2LjY3NiA3NS4xNDUgNDAuODU1IDM4LjI2MiA0OC41MTIgMzMuMjM0IDEyMi4wNy0xMS4yMTUgMTYzLjk3bC0xMzcuNTQgMTI5LjY3Yy0yLjk5MjIgMi44MTY0LTYuOTM3NSA0LjM3NS0xMS4wMjMgNC4zNzV6bS03Ny44MTItMzA3LjAxYy0xLjY5NTMgMC0zLjM5NDUgMC4wNjI1LTUuMTAxNiAwLjE4NzUtMjAuMjgxIDEuNDk2MS0zOC44NTIgMTEuNjkxLTUyLjI4MSAyOC43MTEtMjguMjE1IDM1Ljc3My0yNC42MTMgODkuOTEgOC4wMjczIDEyMC42OGwxMjYuODQgMTE5LjU5IDEyNi44NC0xMTkuNTljMzIuNjQ1LTMwLjc3MyAzNi4yNDYtODQuOTEgOC4wMjczLTEyMC42OC0xMy40MjItMTcuMDItMzEuOTg0LTI3LjIxNS01Mi4yNy0yOC43MTEtMTkuODI4LTEuNDY0OC0zOS4xMDUgNS42MjExLTU0LjI4NSAxOS45MzRsLTE3LjI4NSAxNi4yOTNjLTYuMTk1MyA1LjgzOTgtMTUuODU5IDUuODM5OC0yMi4wNDcgMGwtMTcuMjg1LTE2LjI5M2MtMTMuODcxLTEzLjA3OC0zMS4xNzYtMjAuMTE3LTQ5LjE4LTIwLjExN3oiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: transparent;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin-right: 5px;
+  transition: all .9s ease-in-out;
+}
+
+.rMichis__container .like-button:hover:before {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtMzY5Ljg0IDU1MC4yOGMwLjQ3MjY2IDAuNDcyNjYgMC45NDUzMSAwLjQ3MjY2IDAuOTQ1MzEgMC45NDUzMSA2NS4zNTUtNTEuNjIxIDE5My43LTE0OC4yMyAxOTMuNy0yNDkuMTEgMC01NS44ODMtNDUuNDY1LTEwMS4zNS0xMDEuMzUtMTAxLjM1LTM5Ljc4MSAwLTc0LjM1MiAyMy4yMDctOTAuOTI2IDU2LjgyOC0wLjQ3MjY2IDAuOTQ1MzEtMS40MjE5IDMuMzE2NC0xLjQyMTkgMy4zMTY0cy0wLjk0NTMxLTEuODk0NS0wLjk0NTMxLTIuMzY3MmMtMTYuMTAyLTM0LjA5LTUwLjY3Mi01Ny43Ny05MC45MjYtNTcuNzctNTUuODgzIDAtMTAxLjM1IDQ1LjQ2MS0xMDEuMzUgMTAxLjM0IDAgMTAxLjgyIDEyNy44NyAxOTcuMDEgMTkyLjI3IDI0OC4xNnoiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==");
+  transition: all .9s ease-in-out;
+  transform: rotate(-1turn);
+}
+/* Estilos del contenedor para subir michis */
+.form__container {
+  width: 100%;
+  margin: 20px 0; 
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+/* Estilos del botón para seleccionar la foto del michi */
+.form__container label {
+  width: 27rem;
+  height: 4rem;
+  border-radius: 30em;
+  background-color: var(--white);
+  font-size: 1.8rem;
+  font-family: inherit;
+  padding-top: 6px;
+  border: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  cursor: pointer;
+}
+.form__container label::before {
+  content: '';
+  width: 0;
+  height: 4rem;
+  border-radius: 30em;
+  position: absolute;
+  top: 0;
+  left: 0;  
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+.form__container label:hover {
+  transform: scale(1.1);
+  transition: .5s ease-in-out;
+}
+.form__container label:hover::before {
+  width: 27rem;
+}
+/* Estilos del botón para subir el michi */
+.form__container button {
+  position: relative;
+  outline: 0;
+  border: 1px solid transparent;
+  background-color: #488aec;
+  color: #ffffff;
+  font-size: 1.5rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+}
+.form__container button span {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all .4s ease;
+}
+.form__container button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.form__container button span:nth-child(2), .form__container button span:nth-child(3) {
+  position: absolute;
+  top: 40px;
+  color: #fff;
+}
+
+.form__container button span:nth-child(2) {
+  background-color: #488aec;
+}
+
+.form__container button span:nth-child(3) {
+  background-color: #488aec;
+}
+
+.form__container button:hover {
+  box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+.form__container button:hover span:nth-child(2), .form__container button:focus span:nth-child(3) {
+  top: 0;
+}
+
+.form__container button:focus {
+  box-shadow: none;
+}
+/* Estilos para el botón de eliminar michi */
+.fMichis__container .delete-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+.fMichis__container .delete-button svg {
+  width: 12px;
+  transition-duration: .3s;
+}
+.fMichis__container .delete-button svg {
+  fill: white;
+}
+.fMichis__container .delete-button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: .3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+.fMichis__container .delete-button:hover svg {
+  width: 50px;
+  transition-duration: .3s;
+  transform: translateY(60%);
+}
+.fMichis__container .delete-button::before {
+  position: absolute;
+  top: -20px;
+  content: "Eliminar michi";
+  color: white;
+  transition-duration: .3s;
+  font-size: 2px;
+}
+.fMichis__container .delete-button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(30px);
+  transition-duration: .3s;
+}
+/* Estilos del footer */
+footer {
+  height: 50px;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-top: 20px;
+  padding: 10px 0;
+  background-color: var(--terciary);
+  color: var(--primary-bg);
+  border-top: solid 2px var(--primary);
+}
